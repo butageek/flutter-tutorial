@@ -8,10 +8,10 @@ class DatabaseService {
 
   // collection reference
   final CollectionReference brewCollection =
-      Firestore.instance.collection('brews');
+      FirebaseFirestore.instance.collection('brews');
 
   Future updateUserData(String sugars, String name, int strength) async {
-    return await brewCollection.document(uid).setData({
+    return await brewCollection.doc(uid).set({
       'sugars': sugars,
       'name': name,
       'strength': strength,
@@ -20,11 +20,11 @@ class DatabaseService {
 
   // brew list from snapshot
   List<Brew> _brewListFromSnapshot(QuerySnapshot snapshot) {
-    return snapshot.documents.map((doc) {
+    return snapshot.docs.map((doc) {
       return Brew(
-        name: doc.data['name'] ?? '',
-        strength: doc.data['strength'] ?? 0,
-        sugars: doc.data['sugars'] ?? '0',
+        name: doc.data()['name'] ?? '',
+        strength: doc.data()['strength'] ?? 0,
+        sugars: doc.data()['sugars'] ?? '0',
       );
     }).toList();
   }
@@ -33,9 +33,9 @@ class DatabaseService {
   UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
     return UserData(
       uid: uid,
-      name: snapshot.data['name'],
-      sugars: snapshot.data['sugars'],
-      strength: snapshot.data['strength'],
+      name: snapshot.data()['name'],
+      sugars: snapshot.data()['sugars'],
+      strength: snapshot.data()['strength'],
     );
   }
 
@@ -46,6 +46,6 @@ class DatabaseService {
 
   // get user doc stream
   Stream<UserData> get userData {
-    return brewCollection.document(uid).snapshots().map(_userDataFromSnapshot);
+    return brewCollection.doc(uid).snapshots().map((_userDataFromSnapshot));
   }
 }

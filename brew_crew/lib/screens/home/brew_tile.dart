@@ -3,7 +3,6 @@ import 'package:brew_crew/models/brew.dart';
 
 class BrewTile extends StatelessWidget {
   final Brew brew;
-
   BrewTile({this.brew});
 
   @override
