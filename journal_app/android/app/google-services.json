@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "656325932853",
+    "firebase_url": "https://journal-app-d7bd7.firebaseio.com",
+    "project_id": "journal-app-d7bd7",
+    "storage_bucket": "journal-app-d7bd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656325932853:android:0bc404a03eef10e5f2fe7c",
+        "android_client_info": {
+          "package_name": "com.butageek.journal_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "656325932853-fue5launa391tmipqp24f68l1bkk2qbl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRb_zAsfcStP2hAB16tbq05X5fsiVPOko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "656325932853-fue5launa391tmipqp24f68l1bkk2qbl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
